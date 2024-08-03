@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gauravchanda7.chatterbox.signinPageController">
+    <children>
+        <Text layoutX="215.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chatter Box">
+            <font>
+                <Font size="33.0" />
+            </font>
+        </Text>
+        <Button fx:id="LoginButton" alignment="CENTER" layoutX="534.0" layoutY="14.0" mnemonicParsing="false" onAction="#OnClickOpenLogInPage" text="Log In" />
+        <TextField fx:id="LogInUserName" alignment="CENTER" layoutX="244.0" layoutY="200.0" prefHeight="25.0" prefWidth="190.0" promptText="minimum length of 4 characters" />
+        <PasswordField fx:id="LogInPassword" alignment="CENTER" layoutX="244.0" layoutY="238.0" prefHeight="25.0" prefWidth="190.0" promptText="minimum length of 8 characters" />
+        <Text layoutX="164.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Name" />
+        <Text layoutX="153.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Password" />
+        <Button fx:id="SignInButton" alignment="CENTER" layoutX="273.0" layoutY="312.0" mnemonicParsing="false" onAction="#onClickSignIn" text="Sign In" />
+      <PasswordField fx:id="LogInRePassword" alignment="CENTER" layoutX="244.0" layoutY="277.0" prefHeight="25.0" prefWidth="190.0" promptText="re-enter same password" />
+      <Text layoutX="136.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Re Enter Password" />
+    </children>
+</AnchorPane>
