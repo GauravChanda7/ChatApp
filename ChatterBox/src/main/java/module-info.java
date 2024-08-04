@@ -10,6 +10,7 @@ module gauravchanda7.chatterbox {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires java.desktop;
 
     opens gauravchanda7.chatterbox to javafx.fxml;
     exports gauravchanda7.chatterbox;

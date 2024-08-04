@@ -10,7 +10,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 
 public class signinPageController {
@@ -45,11 +44,23 @@ public class signinPageController {
 
     @FXML
     void onClickSignIn(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("loginPage.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        IUserBaseAccess userBaseAccess = new TextUserAuthenticationBase();
+        String username = LogInUserName.getText();
+        String password = LogInPassword.getText();
+        String rePassword = LogInRePassword.getText();
+        if (password.equals(rePassword)){
+            userBaseAccess.createUserBase();
+            userBaseAccess.addUsersInUserBase(username, password);
+            root = FXMLLoader.load(getClass().getResource("loginPage.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+        else {
+            System.out.println("Re enter correct Password");
+        }
+
     }
 
 }
