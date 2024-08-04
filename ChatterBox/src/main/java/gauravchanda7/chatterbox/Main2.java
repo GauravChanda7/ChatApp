@@ -19,6 +19,7 @@ public class Main2 extends Application {
             Parent loginPage = FXMLLoader.load(getClass().getResource("chatPage.fxml"));
             Scene scene = new Scene(loginPage);
             stage.setScene(scene);
+            stage.centerOnScreen();
             stage.show();
         } catch (Exception e){
             e.printStackTrace();

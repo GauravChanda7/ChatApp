@@ -17,17 +17,19 @@ public class TextUserAuthenticationBase implements IUserBaseAccess {
     public boolean createUserBase() {
         if (Files.exists(filepath)){
             System.out.println("File userbase.txt already exists");
+            return true;
         }
         else {
             try {
                 Files.createFile(filepath);
                 System.out.println("File userbase.txt created");
+                return true;
 
             }catch (IOException e){
                 System.out.println("Error creating userbase.txt");
+                return false;
             }
         }
-        return true;
     }
 
 
@@ -36,10 +38,11 @@ public class TextUserAuthenticationBase implements IUserBaseAccess {
         try {
             Files.writeString(filepath, username + "," + password + "\n", StandardOpenOption.APPEND);
             System.out.println("userbase.txt: "+ username + " : " + password);
+            return true;
         } catch (IOException e){
             System.out.println("Error entering data in userbase.txt");
+            return false;
         }
-        return true;
     }
 
     @Override
@@ -50,14 +53,14 @@ public class TextUserAuthenticationBase implements IUserBaseAccess {
                 String[] userAuthDetails = i.split(",");
                 if (userAuthDetails[0].equals(logInUserName) && userAuthDetails[1].equals(logInPassword)){
                     System.out.println("Login");
-                }
-                else {
-                    System.out.println("Wrong Auth Details");
+                    return true;
                 }
             }
+            System.out.println("Wrong Auth Details");
+            return false;
         } catch (IOException e) {
             System.out.println("Authentication Failed");
+            return false;
         }
-        return true;
     }
 }

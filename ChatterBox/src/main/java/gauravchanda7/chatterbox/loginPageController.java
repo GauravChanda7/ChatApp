@@ -36,16 +36,25 @@ public class loginPageController {
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
+        stage.centerOnScreen();
         stage.show();
 
     }
 
     @FXML
-    void onClickLogIn(ActionEvent event) {
+    void onClickLogIn(ActionEvent event) throws IOException {
         String loginUserNameInput = LogInUserName.getText();
         String loginPasswordInput = LogInPassword.getText();
         IUserBaseAccess userAuthDetails = new TextUserAuthenticationBase();
-        userAuthDetails.authenticateUsers(loginUserNameInput, loginPasswordInput);
-    }
 
+        boolean loggedIn = userAuthDetails.authenticateUsers(loginUserNameInput, loginPasswordInput);
+        if (loggedIn == true){
+            root = FXMLLoader.load(getClass().getResource("chatPage.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.centerOnScreen();
+            stage.show();
+        }
+    }
 }

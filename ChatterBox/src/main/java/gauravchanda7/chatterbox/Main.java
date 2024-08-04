@@ -23,6 +23,7 @@ public class Main extends Application {
             Image logo = new Image(getClass().getResourceAsStream("logo.jpg"));
             stage.getIcons().add(logo);
             stage.setScene(scene);
+            stage.centerOnScreen();
             stage.show();
         } catch (Exception e){
             e.printStackTrace();

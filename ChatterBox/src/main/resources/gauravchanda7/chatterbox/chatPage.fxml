@@ -2,19 +2,74 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane fx:id="anchorPane" prefHeight="650.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gauravchanda7.chatterbox.chatPageController">
    <children>
-      <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" prefHeight="650.0" prefWidth="230.0" vbarPolicy="ALWAYS">
+      <Button fx:id="addFriendsButton" layoutY="50.0" mnemonicParsing="false" onAction="#searchUsers" prefHeight="50.0" prefWidth="250.0" text="Add Friends ➕">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
+      <HBox prefHeight="50.0" prefWidth="250.0">
+         <children>
+            <TextField fx:id="searchBar" prefHeight="50.0" prefWidth="200.0" promptText="Search">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </TextField>
+            <Button fx:id="searchButton" mnemonicParsing="false" onAction="#searchUserFromContacts" prefHeight="50.0" prefWidth="50.0" text="🔎">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" layoutY="100.0" prefHeight="550.0" prefWidth="250.0" vbarPolicy="ALWAYS">
          <content>
-            <VBox fx:id="vBox" prefHeight="650.0" prefWidth="213.0" />
+            <VBox fx:id="contacts" layoutY="100.0" prefHeight="550.0" prefWidth="250.0" />
          </content>
       </ScrollPane>
-      <TextField fx:id="textField" layoutX="500.0" layoutY="299.0" promptText="username" />
-      <Button fx:id="button" layoutX="549.0" layoutY="336.0" mnemonicParsing="false" onAction="#clickButton" text="Button" />
+      <HBox layoutX="250.0" layoutY="600.0" prefHeight="50.0" prefWidth="750.0">
+         <children>
+            <TextArea fx:id="messageBox" prefHeight="50.0" prefWidth="700.0" />
+            <Button fx:id="sendMessageButton" mnemonicParsing="false" onAction="#sendMessageOnClick" prefHeight="50.0" prefWidth="50.0" text="📨">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <VBox layoutX="250.0" prefHeight="600.0" prefWidth="750.0">
+         <children>
+            <HBox prefHeight="50.0" prefWidth="750.0">
+               <children>
+                  <ImageView fx:id="userImage" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+                  <Text fx:id="userName" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="650.0">
+                     <font>
+                        <Font size="35.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="settings" mnemonicParsing="false" onAction="#setSettings" prefHeight="59.0" prefWidth="50.0" text="☰">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <VBox prefHeight="600.0" prefWidth="750.0">
+               <children>
+                  <ScrollPane fx:id="chatsView" hbarPolicy="NEVER" prefHeight="600.0" prefWidth="750.0" vbarPolicy="ALWAYS" />
+               </children>
+            </VBox>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>
