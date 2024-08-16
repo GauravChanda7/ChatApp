@@ -45,7 +45,7 @@ public class loginPageController {
     void onClickLogIn(ActionEvent event) throws IOException {
         String loginUserNameInput = LogInUserName.getText();
         String loginPasswordInput = LogInPassword.getText();
-        IUserBaseAccess userAuthDetails = new TextUserAuthenticationBase();
+        IUserAuthBaseAccess userAuthDetails = new TextUserAuthenticationAuthBase();
 
         boolean loggedIn = userAuthDetails.authenticateUsers(loginUserNameInput, loginPasswordInput);
         if (loggedIn == true){

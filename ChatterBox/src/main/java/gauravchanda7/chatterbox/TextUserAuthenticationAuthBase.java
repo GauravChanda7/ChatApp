@@ -8,10 +8,10 @@ import java.nio.file.StandardOpenOption;
 import java.util.List;
 
 
-public class TextUserAuthenticationBase implements IUserBaseAccess {
+public class TextUserAuthenticationAuthBase implements IUserAuthBaseAccess {
 
-    String userbase = "C:\\Users\\KIIT\\Desktop\\Project\\ChatApp\\ChatterBox\\src\\main\\resources\\gauravchanda7\\chatterbox\\userAuthBase.txt";
-    Path filepath = Paths.get(userbase);
+    private final String userauthbase = "C:\\Users\\KIIT\\Desktop\\Project\\ChatApp\\ChatterBox\\src\\main\\resources\\gauravchanda7\\chatterbox\\userAuthBase.txt";
+    private final Path filepath = Paths.get(userauthbase);
 
     @Override
     public boolean createUserBase() {
@@ -22,11 +22,11 @@ public class TextUserAuthenticationBase implements IUserBaseAccess {
         else {
             try {
                 Files.createFile(filepath);
-                System.out.println("File userbase.txt created");
+                System.out.println("File userAuthbase.txt created");
                 return true;
 
             }catch (IOException e){
-                System.out.println("Error creating userbase.txt");
+                System.out.println("Error creating userAuthbase.txt");
                 return false;
             }
         }
@@ -37,10 +37,10 @@ public class TextUserAuthenticationBase implements IUserBaseAccess {
     public boolean addUsersInUserBase(String username, String password) {
         try {
             Files.writeString(filepath, username + "," + password + "\n", StandardOpenOption.APPEND);
-            System.out.println("userbase.txt: "+ username + " : " + password);
+            System.out.println("userAuthbase.txt: "+ username + " : " + password);
             return true;
         } catch (IOException e){
-            System.out.println("Error entering data in userbase.txt");
+            System.out.println("Error entering data in userAuthbase.txt");
             return false;
         }
     }

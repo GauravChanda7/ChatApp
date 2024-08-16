@@ -44,7 +44,7 @@ public class signinPageController {
 
     @FXML
     void onClickSignIn(ActionEvent event) throws IOException {
-        IUserBaseAccess userBaseAccess = new TextUserAuthenticationBase();
+        IUserAuthBaseAccess userBaseAccess = new TextUserAuthenticationAuthBase();
         String username = LogInUserName.getText();
         String password = LogInPassword.getText();
         String rePassword = LogInRePassword.getText();

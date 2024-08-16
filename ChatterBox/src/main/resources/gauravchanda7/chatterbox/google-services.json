@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "468304773371",
+    "firebase_url": "https://chatter-box-96d93-default-rtdb.firebaseio.com",
+    "project_id": "chatter-box-96d93",
+    "storage_bucket": "chatter-box-96d93.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:468304773371:android:8ca4213b51680dbf80705e",
+        "android_client_info": {
+          "package_name": "gauravchanda7.chatterbox"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoCB6NkRM728TmM4b45V9QiTpsA9pkGV4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
