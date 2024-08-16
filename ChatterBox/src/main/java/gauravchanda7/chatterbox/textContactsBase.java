@@ -21,7 +21,7 @@ public class textContactsBase implements IContactBase{
                 System.out.println("File contactBase.txt created");
                 return true;
             } catch (IOException e) {
-                System.out.println("Error entering data in contactBase.txt");
+                System.out.println("  Error entering data in contactBase.txt");
                 return false;
             }
         }
